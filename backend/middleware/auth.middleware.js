@@ -1,4 +1,4 @@
-import { jwt } from 'jsonwebtoken';
+import  jwt  from 'jsonwebtoken';
 
 import User from "../models/user.model.js";
 export const protectRoute = async (req,res,next)=>{
@@ -9,7 +9,7 @@ try {
     }
     try {
         const decode = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET);
-    const user = await User.findById({user : decode.userId}).select("-password");
+    const user = await User.findById(decode.userId).select("-password");
     if(!user){
         return res.status(401).json({message:"User not found"});
     }
