@@ -1,6 +1,5 @@
 import User from "../models/user.model.js";
-import pkg from 'jsonwebtoken';
-const { jwt } = pkg;
+import  { jwt } from 'jsonwebtoken';
 import dotenv from "dotenv";
 import { redis } from "../lib/redis.js";
 
